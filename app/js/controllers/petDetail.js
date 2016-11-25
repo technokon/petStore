@@ -5,9 +5,9 @@
 
 angular.module('controllers').controller('PetDetailController', PetDetailController);
 
-PetDetailController.$inject = ['$routeParams', 'petService'];
+PetDetailController.$inject = ['$routeParams', 'petService', '$location'];
 
-function PetDetailController($routeParams, petService) {
+function PetDetailController($routeParams, petService, $location) {
     
     var vm = this;
     
@@ -21,5 +21,14 @@ function PetDetailController($routeParams, petService) {
     vm.setImage = function(image) {
         vm.mainImage = image;
     };
+
+    vm.listPage = function () {
+        $location.path('/pets');
+    }
+    
+    vm.removePet = function (pet) {
+        petService.removePet(pet.id);
+        $location.path('/pets');
+    }
     
 }

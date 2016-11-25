@@ -30,8 +30,11 @@ function PetService($resource, $http) {
         })
     }
     
-    function removePet() {
-        
+    function removePet(id) {
+        return $http({
+            url: nginxHost + '/pet-store/pet/' + id,
+            method: 'DELETE'
+        })
     }
     
     function updatePet() {

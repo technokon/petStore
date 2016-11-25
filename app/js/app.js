@@ -6,7 +6,8 @@ var app = angular.module('petStoreApp', [
     'ngRoute',
     'petAnimations',
     'services',
-    'controllers']);
+    'controllers',
+    'directives']);
 
 
 app.config(['$routeProvider',
