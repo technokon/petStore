@@ -1,0 +1,18 @@
+<h2>Enter new pets information</h2>
+<form>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="name" class="form-control" ng-model="vm.pet.name" id="name" placeholder="Enter pet's name">
+    </div>
+    <div class="form-group">
+        <label for="motto">Pet's Motto:</label>
+        <input type="motto" class="form-control" ng-model="vm.pet.motto" id="motto" placeholder="Enter pet's motto">
+    </div>
+    <div class="form-group">
+        <label for="description">Pet's Description:</label>
+        <input type="description" class="form-control" ng-model="vm.pet.description" id="description" placeholder="Describe this pet">
+    </div>
+
+    <button type="submit" class="btn btn-default" ng-click="vm.createPet(vm.pet);">Submit</button>
+</form>
+
