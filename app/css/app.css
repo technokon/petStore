@@ -47,6 +47,10 @@ img.pet:first-child {
     display: block;
 }
 
+img.small-height {
+    height: 100px;
+}
+
 ul.pet-thumbs {
     margin: 0;
     list-style: none;
@@ -106,4 +110,9 @@ ul.specs dt {
 
 h1 {
     border-bottom: 1px solid gray;
+}
+
+div.spacer {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }

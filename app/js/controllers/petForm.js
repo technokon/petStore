@@ -9,13 +9,11 @@ PetForm.$inject = ['petService','$location']
 function PetForm(petService, $location) {
     var vm = this;
 
-    vm.pet = {
-        photos: []
-    };
+    vm.pet = {};
 
-    vm.createPet = function (pet) {
+    vm.createPet = function (pet, photos) {
         // send photos as well
-        petService.addPet(pet).success(function (response) {
+        petService.addPet(pet, photos).success(function (response) {
             console.log('saved pet', response);
 
             $location.path('/pets');
@@ -23,11 +21,12 @@ function PetForm(petService, $location) {
     }
 
     vm.showPhotos = function () {
-        return vm.pet && vm.pet.photos && vm.pet.photos.length;
+        return vm.photos && vm.photos.length;
     }
 
     vm.clearPhotoSelections = function () {
-        delete vm.pet.photos;
+        delete vm.photos;
+        document.getElementById('photos').value = null;
     }
 
 

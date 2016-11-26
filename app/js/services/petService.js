@@ -19,14 +19,25 @@ function PetService($resource, $http) {
         })
     }
     
-    function addPet(pet) {
+    function addPet(pet, photos) {
+        var fd = new FormData();
+
+        fd.append('pet', JSON.stringify(pet));
+        
+        angular.forEach(photos, function (value, key) {
+            fd.append('file', value);
+        })
+        
         return $http({
             url: nginxHost + '/pet-store/pet',
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': undefined
             },
-            data: pet
+            data: fd,
+            transformRequest: function (data, headersGetterFunction) {
+                return data;
+            }
         })
     }
     

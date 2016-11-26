@@ -22,7 +22,7 @@
 
             <ul class="pets">
                 <li ng-repeat="pet in vm.pets | filter:vm.query | orderBy:vm.orderProp" class="thumbnail pet-listing">
-                    <a href="#/pets/{{pet.id}}" class="thumb"><img ng-src="data:image/gif;base64,{{pet.image}}"></a>
+                    <a href="#/pets/{{pet.id}}" class="thumb"><img ng-src="data:image/jpeg;base64, {{pet.images[0]}}"></a>
                     <a href="#/pets/{{pet.id}}">{{pet.name}}</a>
                     <p>{{pet.motto}}</p>
                 </li>
@@ -30,9 +30,6 @@
 
         </div>
 
-        <div class="nav">
-            <button type="button" ng-click="phListCtrl.logout()" class="btn btn-success">Logout</button>
-        </div>
 
     </div>
 </div>

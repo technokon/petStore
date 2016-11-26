@@ -26,6 +26,8 @@ function FileInput($parse) {
             
             scope.$apply();
         });
+
+       
     }
 
     function getUrl(file) {

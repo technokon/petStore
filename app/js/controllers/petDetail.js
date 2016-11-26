@@ -27,8 +27,10 @@ function PetDetailController($routeParams, petService, $location) {
     }
     
     vm.removePet = function (pet) {
-        petService.removePet(pet.id);
-        $location.path('/pets');
+        petService.removePet(pet.id).success(function (data) {
+            $location.path('/pets');
+        });
+
     }
     
 }

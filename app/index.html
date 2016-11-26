@@ -21,6 +21,7 @@
     <script src="js/animations/animations.js"></script>
     <script src="js/services/services.js"></script>
     <script src="js/controllers/controllers.js"></script>
+    <script src="js/directives/directives.js"></script>
     <script src="js/services/petService.js"></script>
     <script src="js/services/session.js"></script>
     <script src="js/controllers/main.js"></script>
@@ -28,12 +29,26 @@
     <script src="js/controllers/petList.js"></script>
     <script src="js/controllers/petDetail.js"></script>
     <script src="js/controllers/petForm.js"></script>
+    <script src="js/directives/fileInput.js"></script>
     <!--endbuild-->
 
 </head>
 <body ng-controller="MainController as vm">
 
-<div class="view-container">
+<div class="container">
+
+    <div class="page-header" style="align-items: center;">
+        <h1 style="text-align: center; background-color: oldlace;">
+            <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDIzNi42MiAyMzYuNjIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDIzNi42MiAyMzYuNjI7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPGc+Cgk8Zz4KCQk8cGF0aCBkPSJNMTk3LjAyMywyMjUuNTQ1Yy0xLjE0NS05LjUzMy0xMS42OC0xMC42MTQtMTcuODA1LTkuOTU4Yy02LjUyMS0yNC41NTQsMTYuMjI1LTYxLjE1MSwxNy41NjMtNjkuODIgICAgYzEuNDM4LTkuMzEyLTYuNjU4LTYzLjUtNy41MTMtOTAuOTM4QzE4OC4zODksMjYuNjYyLDE0Ny40OC00LjQzMywxNDAuNjUsMC41MjRjLTYuNzY4LDcuNDg0LDkuNzQ4LDE3LjU4NSwxLjA1NCwyNi4yNDUgICAgYy04LjM5OCw4LjM2Ny0xMC41ODgsMTMuOTktMTYuODI0LDIzLjQ2Yy0xNS45NzYsMjQuMjU1LDI3LjMxOCwyNC41NTgsMjcuMzE4LDI0LjU1OHMtMzMuODgyLDI1LjExMi00MS40MjEsMzcuNzY4ICAgIGMtNi45NDMsMTEuNjU2LTkuODU0LDI0LjY5Ni0xOC4yMzIsMzUuNjg4Yy0xOS4wOTQsMjUuMDUxLTE0Ljc5MSw2OC43MjktMTQuNzkxLDY4LjcyOXMtMzYuMTctMTEuODM5LTE2LjI2NC01My4xMzMgICAgQzc2LjY0MywxMzIuNDA2LDg0LjEwNyw4Ni4wMiw1MC4wMTYsOTcuOTVjLTEzLjE4OSw0LjYxNiwyLjk0OSwxNC4zMjUsNS43MzQsMTcuNDM1YzkuMzE4LDEwLjQsMS40NDEsMjcuODk2LTQuMTc0LDM4LjAxMiAgICBjLTE1LjAzNywyNy4wOTEtMjAuNDk2LDU1LjQ3NSwxMS4xNTQsNzIuOTc4YzE0LjA2Myw3Ljc3NiwzMy4wNTUsOS43LDUyLjE3LDkuOTgybDQ4LjY0LDAuMTQgICAgQzE3OS41NjQsMjM3LjI5NCwxOTcuNjg5LDIzNC4yOTgsMTk3LjAyMywyMjUuNTQ1eiIgZmlsbD0iIzAwMDAwMCIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=">
+            Olga's Pet Store
+        </h1>
+        <p style="text-align: center;">
+            Your favorite pets are here
+        </p>
+    </div>
+</div>
+
+<div class="container">
     <div ng-view class="view-frame"></div>
 </div>
 
