@@ -10,7 +10,21 @@ var uglify = require('gulp-uglify');
 
 gulp.task('minify', function () {
     gulp.src([
-        'app/js/**/*.js'])
+        'app/js/app.js',
+        'app/js/animations/animations.js',
+        'app/js/services/services.js',
+        'app/js/controllers/controllers.js',
+        'app/js/directives/directives.js',
+        'app/js/services/petService.js',
+        'app/js/services/session.js',
+        'app/js/controllers/main.js',
+        'app/js/controllers/login.js',
+        'app/js/controllers/petList.js',
+        'app/js/controllers/petDetail.js',
+        'app/js/controllers/petForm.js',
+        'app/js/controllers/petEdit.js',
+        'app/js/directives/fileInput.js'
+    ])
         .pipe(concat('petStore.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/js'));

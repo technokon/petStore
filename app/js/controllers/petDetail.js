@@ -25,6 +25,10 @@ function PetDetailController($routeParams, petService, $location) {
     vm.listPage = function () {
         $location.path('/pets');
     }
+
+    vm.editPet = function (id) {
+        $location.path('/petEdit/' + id);
+    }
     
     vm.removePet = function (pet) {
         petService.removePet(pet.id).success(function (data) {

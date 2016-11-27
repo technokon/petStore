@@ -4,9 +4,13 @@
 
 angular.module('controllers').controller('MainController', MainController);
 
-MainController.$inject = ['petService'];
+MainController.$inject = ['petService','$location'];
 
-function MainController(petService) {
+function MainController(petService, $location) {
     var vm = this;
+    
+    vm.searchItem = function (item) {
+        $location.path('/search/' + item);
+    }
 }
 

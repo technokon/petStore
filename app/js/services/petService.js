@@ -12,9 +12,9 @@ function PetService($resource, $http) {
 
     var Pets = $resource(nginxHost + '/pet-store/pet/:petId');
 
-    function getPets() {
+    function getPets(param) {
         return $http({
-            url: nginxHost + '/pet-store/pets',
+            url: nginxHost + '/pet-store/pets/' + param,
             mehtod: 'GET'
         })
     }
@@ -48,8 +48,16 @@ function PetService($resource, $http) {
         })
     }
     
-    function updatePet() {
+    function updatePet(pet) {
         
+        return $http({
+            url: nginxHost + '/pet-store/pet',
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: pet
+        })
     }
     
     function getPetById(petId) {

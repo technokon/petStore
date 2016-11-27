@@ -4,12 +4,13 @@
 
 angular.module('controllers').controller('PetListController', PetListController);
 
-PetListController.$inject = ['petService', '$location'];
+PetListController.$inject = ['petService', '$location', '$routeParams'];
 
-function PetListController(petService, $location) {
+function PetListController(petService, $location, $routeParams) {
     var vm = this;
     
-    petService.getPets().then(function (response) {
+    // if there are any parameters then search the server by it
+    petService.getPets($routeParams.item).then(function (response) {
         vm.pets = response.data;
     }).catch(function (error){
         console.log('error in petService.getPets()', error);

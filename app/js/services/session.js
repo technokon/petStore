@@ -15,7 +15,7 @@ function Session($location) {
     };
 
     function login() {
-        $location.path('/pets');
+        $location.path('/options');
         Session.loggedIn = true;
     }
 

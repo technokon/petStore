@@ -13,7 +13,12 @@ var app = angular.module('petStoreApp', [
 app.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider.
-        when('/pets', {
+        when('/options', {
+            templateUrl: 'templates/options.html',
+            controller: 'MainController',
+            controllerAs: 'vm'
+        }).
+        when('/search/:item', {
             templateUrl: 'templates/pet-list.html',
             controller: 'PetListController',
             controllerAs: 'vm'
@@ -28,13 +33,18 @@ app.config(['$routeProvider',
             controller: 'PetForm',
             controllerAs: 'vm'
         }).
+        when('/petEdit/:petId', {
+            templateUrl: 'templates/pet-edit.html',
+            controller: 'PetEdit',
+            controllerAs: 'vm'
+        }).
         when('/login', {
             templateUrl: 'templates/login.html',
             controller: 'LoginController',
             controllerAs: 'vm'
         }).
         otherwise({
-            redirectTo: '/login'
+            redirectTo: '/options'
         });
     }]);
 
