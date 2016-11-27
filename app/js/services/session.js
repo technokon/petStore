@@ -5,26 +5,29 @@
 
 angular.module('services').factory('Session', Session);
 
-Session.$inject = ['$location'];
+Session.$inject = [];
 
-function Session($location) {
-
-    var Session = {
-        login: login,
-        logout: logout
-    };
+function Session() {
+    
+    var loggedIn = false;
+    
+    function isLoggedIn() {
+        return loggedIn;
+    }
 
     function login() {
-        $location.path('/options');
-        Session.loggedIn = true;
+       loggedIn = true;
     }
 
     function logout() {
-        $location.path('/login');
-        Session.loggedIn = false;
+        loggedIn = false;
     }
 
-    return Session;
+    return {
+        login: login,
+        logout: logout,
+        isLoggedIn: isLoggedIn
+    };
 }
 
 

@@ -7,7 +7,8 @@ var app = angular.module('petStoreApp', [
     'petAnimations',
     'services',
     'controllers',
-    'directives']);
+    'directives',
+    'ngDialog']);
 
 
 app.config(['$routeProvider',
@@ -18,7 +19,7 @@ app.config(['$routeProvider',
             controller: 'MainController',
             controllerAs: 'vm'
         }).
-        when('/search/:item', {
+        when('/search/:item?', {
             templateUrl: 'templates/pet-list.html',
             controller: 'PetListController',
             controllerAs: 'vm'

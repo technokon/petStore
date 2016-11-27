@@ -63,6 +63,30 @@ function PetService($resource, $http) {
     function getPetById(petId) {
         return Pets.get({petId: petId}).$promise;
     }
+
+    function login(user) {
+
+        var fd = new FormData();
+        fd.append('username', user.username);
+        fd.append('password', user.password);
+
+        return $http({
+            url: nginxHost + '/login',
+            method: 'POST',
+            headers: {'Content-Type': undefined},
+            data: fd
+        })
+    }
+
+    function logout(user) {
+
+        return $http({
+            url: nginxHost + '/logout',
+            method: 'POST',
+            headers: {'Content-Type': undefined},
+            data: {}
+        })
+    }
     
     function Pet() {
         
@@ -73,7 +97,9 @@ function PetService($resource, $http) {
         addPet: addPet,
         removePet: removePet,
         updatePet: updatePet,
-        getPetById: getPetById
+        getPetById: getPetById,
+        login: login,
+        logout: logout
     }
 }
 

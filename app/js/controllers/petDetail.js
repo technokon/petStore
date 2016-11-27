@@ -23,7 +23,7 @@ function PetDetailController($routeParams, petService, $location) {
     };
 
     vm.listPage = function () {
-        $location.path('/pets');
+        $location.path('/search');
     }
 
     vm.editPet = function (id) {
